@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #A6CAF0;
+    }
+    #background-layer {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+      background-position: center top +15%; /* Center the background image */
+    }
+  </style>
+</head>
+<body onload="initSetup()">
+
+  <div id="background-layer"></div>
+
+  <script>
+    let basepath = "C:/Program Files (x86)/Sony/VAIO HTML Wallpaper/"; // Set the base path for images
+    let screen_width = 4000;
+    let screen_height = 3000;
+    let color_depth = 16;
+
+    // Other variable definitions...
+    //
+    // Update interval (ms)
+    let update_interval = 60000;
+
+    // current image number
+    let previous_time = -1;
+    let previous_period = -1;
+
+    function initSetup() {
+      setBG();
+      setInterval(setBG, update_interval);
+    }
+
+    function setBG() {
+      let now = new Date();
+      let hour = now.getHours();
+
+      // Rest of the logic for setting background image...
+      let backgroundImageURL = getBackgroundURLForTime(hour);
+
+      document.getElementById("background-layer").style.backgroundImage = "url('" + backgroundImageURL + "')";
+    }
+
+    function getBackgroundURLForTime(hour) {
+      // Logic for determining background URL based on time
+      let period = getTimePeriod(hour);
+      let file_name = getFileByTimePeriod(period);
+
+      return basepath + screen_width + 'x' + screen_height + '/' + color_depth + 'bit/' + file_name + color_depth + 'bit' + screen_width + 'x' + screen_height + '.png';
+    }
+
+    function getTimePeriod(hour) {
+      // Logic for determining time period based on hour
+      if (hour >= 4 && hour < 10) {
+        return 0; // morning
+      } else if (hour >= 10 && hour < 16) {
+        return 1; // daytime
+      } else if (hour >= 16 && hour < 20) {
+        return 2; // evening
+      } else {
+        return 3; // night
+      }
+    }
+    function getFileByTimePeriod(period) {
+      // Logic for getting file name based on time period
+      let file_names = ["asa", "hiru", "yu", "yoru"];
+      return file_names[period];
+    }
+  </script>
+</body>
+</html>
