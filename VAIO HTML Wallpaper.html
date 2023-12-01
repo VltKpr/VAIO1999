@@ -18,7 +18,7 @@
       background-size: cover;
       background-repeat: no-repeat;
       z-index: -1;
-      background-position: center top +15%; /* Center the background image */
+      background-position: center top +15%; /* Center the background image, adjusts offset from top to make the VAIO logo stand out on a 16:9 widescreen */
     }
   </style>
 </head>
@@ -27,13 +27,14 @@
   <div id="background-layer"></div>
 
   <script>
-    let basepath = "C:/Program Files (x86)/Sony/VAIO HTML Wallpaper/"; // Set the base path for images
+    // Adjust these values to match the image resolution in the filename
     let screen_width = 4000;
     let screen_height = 3000;
     let color_depth = 16;
-
+    
     // Other variable definitions...
-    //
+    // Set the base path for images
+    let basepath = "C:/Windows/Web/Wallpaper/Sony/VAIO HTML Wallpaper/";
     // Update interval (ms)
     let update_interval = 60000;
 
@@ -52,7 +53,6 @@
 
       // Rest of the logic for setting background image...
       let backgroundImageURL = getBackgroundURLForTime(hour);
-
       document.getElementById("background-layer").style.backgroundImage = "url('" + backgroundImageURL + "')";
     }
 
@@ -67,13 +67,13 @@
     function getTimePeriod(hour) {
       // Logic for determining time period based on hour
       if (hour >= 4 && hour < 10) {
-        return 0; // morning
+        return 0; // morning "asa"
       } else if (hour >= 10 && hour < 16) {
-        return 1; // daytime
+        return 1; // daytime "hiru"
       } else if (hour >= 16 && hour < 20) {
-        return 2; // evening
+        return 2; // evening "yu"
       } else {
-        return 3; // night
+        return 3; // night "yuru"
       }
     }
     function getFileByTimePeriod(period) {
