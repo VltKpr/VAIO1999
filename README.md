@@ -1,6 +1,8 @@
 # VAIO1999
 Updated version of the Vaio 1999 active desktop wallpaper set
 
+A preview can be seen here: http://dahl.red/VAIO%20HTML%20Wallpaper.html
+
 Clone the files in this repository to C:\Windows\Web\Wallpaper
 
 Use a tool like rocksdanister's Lively Wallpaper to set as your desktop wallpaper. (https://github.com/rocksdanister/lively)
