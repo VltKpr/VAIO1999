@@ -2,7 +2,8 @@
 Updated version of the Vaio 1999 active desktop wallpaper set
 
 Clone the files in this repository to C:\Windows\Web\Wallpaper
-Use a tool like rocksdanister's Lively Wallpaper to set as your desktop wallpaper.
+
+Use a tool like rocksdanister's Lively Wallpaper to set as your desktop wallpaper. (https://github.com/rocksdanister/lively)
 *Note you will need to adjust the settings in lively to use WebView2 as the html player under Settings > Wallpaper > Plugins. This will require you to download additional files into the lively plugins folder and install the Windows Desktop runtime package from Microsoft.
 
 The wallpapers have been upscaled using an AI tool to make them a resolution of 4000x3000. The upscaling isn't perfect, as the text in the top right corner is supposed to have a soft focus as intended by the original artist.
